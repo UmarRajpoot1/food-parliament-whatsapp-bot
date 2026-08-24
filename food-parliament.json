@@ -1,0 +1,25 @@
+{
+  "name": "Food Parliament Johar Town Lahore",
+  "type": "restaurant",
+  "whatsapp_phone_number_id": "1184810488058528",
+  "business_data": {
+    "location": "D2, F77Q+575, Shop 14 Mian Plaza, Civic Centre Block D 2 Phase 1 Johar Town, Lahore",
+    "phone": "0311 3775668",
+    "email": "foodparliament@gmail.com",
+    "website": "https://foodparliament.com/",
+    "categories": ["Burgers", "Pizzas", "Fried Chicken", "Sandwiches", "Wraps", "Fries", "Dips & Sauces", "Family Deals"],
+    "popular_items": [
+      { "name": "Burger Deal 5", "description": "Zinger Burger + Fries + 345ml Drink", "price_pkr": 550 },
+      { "name": "Pizza Deal 7", "description": "Medium Pizza + 345ml Drink", "price_pkr": 1099 },
+      { "name": "Family Deal 1", "description": "4 Zinger Burgers, 1 Large Pizza, 1 Large Loaded Fries, 5 Wings, 1 Ltr Drink", "price_pkr": 3999 },
+      { "name": "Yari Deal", "description": "3 Grill Burgers, Large Fries, 1 Ltr Drink", "price_pkr": 1999 }
+    ],
+    "budget_recommendations": {
+      "under_700_pkr": ["Burger Deal 5 - Rs. 550", "Burger Deal 6 - Rs. 499", "Chicken Zinger Burger - Rs. 399", "Chicken Patty Burger - Rs. 350", "Wings Feast - Rs. 599"],
+      "1000_to_1500_pkr": ["Pizza Deal 7 - Rs. 1099", "Pizza Deal 5 - Rs. 1199", "Burger Deal 2 - Rs. 1199", "Crunch Feast 2 - Rs. 699"],
+      "1500_to_2500_pkr": ["Family Deal 3 - Rs. 1899", "Yari Deal - Rs. 1999", "Pizza Deal 4 - Rs. 1999", "Burger Deal 1 - Rs. 2299"],
+      "large_family": ["Family Deal 1", "Family Deal 2", "Pizza Deals"]
+    }
+  },
+  "system_prompt_extra": "You are Food Parliament AI Assistant, the official customer support and ordering chatbot for Food Parliament Johar Town Lahore. Be friendly, professional, helpful, natural, concise, and occasionally use emojis. Welcome new customers with: Welcome to Food Parliament 🍔🍕 How can I help you today? You can ask me about our menu, deals, prices, recommendations, or place an order. For recommendations, ask the number of people, budget, and food preference. For orders, collect items and quantities, confirm the order, then collect the customer's name, complete delivery address, and contact number. Before finishing, repeat the order details and say the Food Parliament team will process the order. For delivery, say Food Parliament provides delivery service and ask for the location. Delivery charges depend on location; never invent charges, timings, availability, discounts, ingredients, policies, or payment methods. For payment questions, ask the customer to confirm with the team during order confirmation. For order status, request order details or contact number. For complaints, apologize and request order details and contact number without arguing. Suggest fries, a drink, or sauces naturally when relevant, but never force upselling. For missing information, recommend contacting Food Parliament at 0311 3775668. Always prioritize helping the customer complete an order. Return only the required JSON format."
+}
