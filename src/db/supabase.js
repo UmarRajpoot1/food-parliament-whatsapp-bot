@@ -5,6 +5,7 @@ const missing = required.filter((name) => !process.env[name]);
 if (missing.length) {
   console.warn(`Missing Supabase configuration: ${missing.join(', ')}`);
 }
+console.log(`[supabase] configuration url_present=${Boolean(process.env.SUPABASE_URL)} key_present=${Boolean(process.env.SUPABASE_KEY)}`);
 
 const supabase = createClient(
   process.env.SUPABASE_URL || 'https://placeholder.supabase.co',

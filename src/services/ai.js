@@ -5,18 +5,27 @@ function buildSystemPrompt(business) {
 }
 
 async function requestCompletion(messages, apiKey, baseUrl, model) {
+  console.log(`[ai] calling ${baseUrl} model=${model} messages=${messages.length} api_key_present=${Boolean(apiKey)}`);
   const response = await fetch(`${baseUrl}/chat/completions`, {
     method: 'POST',
     headers: { Authorization: `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
     body: JSON.stringify({ model, temperature: 0.2, response_format: { type: 'json_object' }, messages })
   });
-  if (!response.ok) throw new Error(`AI request failed (${response.status}): ${await response.text()}`);
+  if (!response.ok) {
+    const errorBody = await response.text();
+    console.error(`[ai] request failed status=${response.status} body=${errorBody}`);
+    throw new Error(`AI request failed (${response.status}): ${errorBody}`);
+  }
+  console.log(`[ai] response received status=${response.status}`);
   return response.json();
 }
 
 async function generateReply(business, history, incomingText) {
   const apiKey = process.env.OPENAI_API_KEY || process.env.GROQ_API_KEY;
-  if (!apiKey) throw new Error('Set GROQ_API_KEY or OPENAI_API_KEY');
+  if (!apiKey) {
+    console.error(`[ai] missing API key groq_key_present=${Boolean(process.env.GROQ_API_KEY)} openai_key_present=${Boolean(process.env.OPENAI_API_KEY)}`);
+    throw new Error('Set GROQ_API_KEY or OPENAI_API_KEY');
+  }
   const baseUrl = process.env.OPENAI_API_KEY
     ? 'https://api.openai.com/v1'
     : 'https://api.groq.com/openai/v1';
